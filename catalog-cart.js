@@ -4,6 +4,8 @@
   var CART_STORAGE_KEY = 'pepticore_cart_items';
   var MIN_ORDER = 100;
 
+  function gbpPrice(usd) { return Math.round(Number(usd) * 0.79) + 2; }
+
   function readCart() {
     try {
       var raw = window.localStorage ? localStorage.getItem(CART_STORAGE_KEY) : '';
@@ -137,7 +139,7 @@
     if (!count) return;
 
     bar.querySelector('#pepticoreCartCount').textContent = String(count);
-    bar.querySelector('#pepticoreCartSubtotal').textContent = '$' + total;
+    bar.querySelector('#pepticoreCartSubtotal').textContent = '$' + total + ' (£' + gbpPrice(total) + ')';
 
     var noteEl = bar.querySelector('#pepticoreCartNote');
     var ctaEl = bar.querySelector('#pepticoreCartCta');
@@ -158,7 +160,7 @@
         '<div class="pepticore-cart-row">' +
           '<div>' +
             '<div class="pepticore-cart-row-name">' + esc(item.seriesName) + '</div>' +
-            '<div class="pepticore-cart-row-meta">' + esc(item.sku) + ' · ' + esc(item.spec) + ' · $' + esc(item.price) + '</div>' +
+            '<div class="pepticore-cart-row-meta">' + esc(item.sku) + ' · ' + esc(item.spec) + ' · $' + esc(item.price) + ' (£' + gbpPrice(item.price) + ')</div>' +
           '</div>' +
           '<button type="button" class="pepticore-cart-row-remove" data-remove-key="' + esc(cartItemKey(item)) + '">Remove</button>' +
         '</div>';

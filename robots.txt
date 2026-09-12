@@ -5,4 +5,4 @@ Disallow: /r/
 Disallow: /w/
 Disallow: /admin
 
-Sitemap: /sitemap.xml
+Sitemap: https://peptidesprescripsts.com/sitemap.xml

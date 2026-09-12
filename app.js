@@ -14,6 +14,7 @@
   var SALES_ROUTE_TTL_DAYS = 30;
   var CART_STORAGE_KEY = 'pepticore_cart_items';
   var MIN_ORDER = 100;
+  function gbpPrice(usd) { return Math.round(Number(usd) * 0.79) + 2; }
   var VISITOR_STORAGE_KEY = 'pepticore_visitor_id';
   var SESSION_STORAGE_KEY = 'pepticore_session_id';
   var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
@@ -918,7 +919,7 @@
         +     '<div class="cart-item-meta">'
         +       '<span>' + esc(item.sku) + '</span>'
         +       '<span>' + esc(item.spec) + '</span>'
-        +       '<strong>$' + esc(item.price) + '</strong>'
+        +       '<strong>$' + esc(item.price) + ' <span class="price-gbp">£' + gbpPrice(item.price) + '</span></strong>'
         +     '</div>'
         +   '</div>'
         +   '<button class="cart-remove" type="button" data-cart-remove="' + esc(cartItemKey(item)) + '" aria-label="Remove ' + esc(item.seriesName) + '">Remove</button>'
