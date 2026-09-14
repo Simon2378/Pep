@@ -1,4 +1,4 @@
-// PeptiCore product catalog - V4.9 source with site exclusions, 8 categories, USD per box
+// PeptidesPrescripts product catalog - V4.9 source with site exclusions, 8 categories, USD per box
 window.PEPTICORE_DATA = [
   {
     id: "glp1",

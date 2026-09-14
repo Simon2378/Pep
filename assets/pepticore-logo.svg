@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="128" viewBox="0 0 512 128" role="img" aria-labelledby="title">
-  <title id="title">PeptiCore</title>
-  <rect width="512" height="128" rx="16" fill="#fbfaf6"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="128" viewBox="0 0 740 128" role="img" aria-labelledby="title">
+  <title id="title">PeptidesPrescripts</title>
+  <rect width="740" height="128" rx="16" fill="#fbfaf6"/>
   <g transform="translate(28 28)" fill="none" stroke="#123f37" stroke-width="4">
     <path d="M0 36a36 36 0 0 1 72 0 36 36 0 0 1-72 0z"/>
     <path d="m20 20 32 32m0-32L20 52" stroke-linecap="round"/>
     <circle cx="36" cy="36" r="8" fill="#123f37" stroke="none"/>
   </g>
-  <text x="124" y="82" fill="#123f37" font-family="Georgia, serif" font-size="58">PeptiCore</text>
+  <text x="124" y="82" fill="#123f37" font-family="Georgia, serif" font-size="58">PeptidesPrescripts</text>
 </svg>

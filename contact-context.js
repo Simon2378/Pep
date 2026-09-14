@@ -77,7 +77,7 @@
       if (!base) throw new Error('route_unavailable');
       return {
         base: base,
-        displayName: String(payload.displayName || (payload.account && payload.account.displayName) || 'PeptiCore').trim().slice(0, 80),
+        displayName: String(payload.displayName || (payload.account && payload.account.displayName) || 'PeptidesPrescripts').trim().slice(0, 80),
         salesCode: String(payload.salesCode || code || 'default').trim().slice(0, 20)
       };
     });
@@ -85,7 +85,7 @@
 
   function inquiryMessage(details, route) {
     return [
-      'Hello ' + (route.displayName || 'PeptiCore') + ',',
+      'Hello ' + (route.displayName || 'PeptidesPrescripts') + ',',
       '',
       'I would like a research-use catalog quote.',
       details.series ? 'Product series: ' + details.series : '',
@@ -137,7 +137,7 @@
         link.setAttribute('data-track-entity-id', details.sku || details.series || 'catalog-inquiry');
         link.setAttribute('data-track-label', details.sku || details.series || 'Catalog WhatsApp inquiry');
       });
-      if (status) status.textContent = 'WhatsApp inquiry is ready. Final quote is confirmed by PeptiCore sales.';
+      if (status) status.textContent = 'WhatsApp inquiry is ready. Final quote is confirmed by PeptidesPrescripts sales.';
     }).catch(function () {
       links.forEach(function (link) {
         link.setAttribute('aria-disabled', 'true');

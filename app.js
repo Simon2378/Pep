@@ -128,7 +128,7 @@
     else unlockPageScroll();
   }
 
-  window.PeptiCoreModalSync = syncPageScrollLock;
+  window.PeptidesPrescriptsModalSync = syncPageScrollLock;
 
   function normalizeOverlayState() {
     [
@@ -374,7 +374,7 @@
     var name = String(account && (account.label || account.displayName || account.display_name || account.name || '') || '').trim();
     if (name) return name;
     var code = cleanSalesCode(account && (account.salesCode || account.sales_code || ''));
-    return code || 'PeptiCore';
+    return code || 'PeptidesPrescripts';
   }
   function withWaGreeting(message, account) {
     var text = String(message || '');
@@ -535,11 +535,11 @@
       var message = link.getAttribute('data-wa-message') || '';
       link.href = wa(message);
     });
-    if (footWa) footWa.href = wa('Hello PeptiCore, I would like a catalog overview.');
+    if (footWa) footWa.href = wa('Hello PeptidesPrescripts, I would like a catalog overview.');
     var fab = document.getElementById('fab');
-    if (fab) fab.href = wa('Hello PeptiCore, I would like a catalog overview.');
+    if (fab) fab.href = wa('Hello PeptidesPrescripts, I would like a catalog overview.');
     var houseWa = document.getElementById('houseWa');
-    if (houseWa) houseWa.href = wa('Hello AOSAI, I would like to ask about PeptiCore products.');
+    if (houseWa) houseWa.href = wa('Hello AOSAI, I would like to ask about PeptidesPrescripts products.');
     renderCart();
   }
   function trackingIds() {
@@ -857,7 +857,7 @@
     var lines = items.map(function (item, i) {
       return (i + 1) + '. ' + item.seriesName + ' — ' + item.sku + ' — ' + item.spec + ' — $' + item.price;
     });
-    return 'Hello PeptiCore, I would like to order these products:\n\n' + lines.join('\n');
+    return 'Hello PeptidesPrescripts, I would like to order these products:\n\n' + lines.join('\n');
   }
 
   function updateCartCount() {
@@ -1623,7 +1623,7 @@
       var waTrigger = target.closest('#fab,a[href*="wa.me/"],a[href*="api.whatsapp.com/"]');
       if (!waTrigger) return;
       if (!waTrigger.getAttribute('href') || waTrigger.getAttribute('href') === '#') {
-        waTrigger.href = wa('Hello PeptiCore, I would like a catalog overview.');
+        waTrigger.href = wa('Hello PeptidesPrescripts, I would like a catalog overview.');
       }
       waTrigger.setAttribute('target', '_blank');
       waTrigger.setAttribute('rel', 'noopener noreferrer');
@@ -1766,7 +1766,7 @@
   var closeHouse2Btn = document.getElementById('closeHouse2');
   var houseScrollEl = document.getElementById('houseScroll');
   var houseWa = document.getElementById('houseWa');
-  if (houseWa) houseWa.href = wa('Hello AOSAI, I would like to ask about PeptiCore products.');
+  if (houseWa) houseWa.href = wa('Hello AOSAI, I would like to ask about PeptidesPrescripts products.');
 
   // probe each [data-img] element — load assets/<filename>, reveal on success, fallback on error
   var houseImagesLoaded = false;
@@ -2003,7 +2003,7 @@
       view.innerHTML = renderCategory(c);
       wireCategory(c);
       initMotion('category');
-      if (fabEl) fabEl.href = wa('Hello PeptiCore, I am browsing ' + c.label + ' and would like more information.');
+      if (fabEl) fabEl.href = wa('Hello PeptidesPrescripts, I am browsing ' + c.label + ' and would like more information.');
       trackEvent('category_view', { entityType: 'category', entityId: c.id, label: c.label, metadata: { series: c.series.length } });
       trackEvent('page_view', { entityType: 'route', entityId: 'category', label: c.label });
     } else if (r.route === 'series') {
@@ -2014,7 +2014,7 @@
       view.innerHTML = renderSeries(cat, s);
       armScrollReveal();
       initMotion('series');
-      if (fabEl) fabEl.href = wa('Hello PeptiCore, I would like to order ' + s.name + ' (from $' + minPrice(s) + ').');
+      if (fabEl) fabEl.href = wa('Hello PeptidesPrescripts, I would like to order ' + s.name + ' (from $' + minPrice(s) + ').');
       trackEvent('product_view', { entityType: 'series', entityId: s.id, label: s.name, value: String(minPrice(s)), metadata: { category: cat.id, skus: s.skus.length } });
       trackEvent('page_view', { entityType: 'route', entityId: 'series', label: s.name });
     } else {
@@ -2023,7 +2023,7 @@
       view.innerHTML = renderHome();
       wireHome();
       initMotion('home');
-      if (fabEl) fabEl.href = wa('Hello PeptiCore, I would like a catalog overview.');
+      if (fabEl) fabEl.href = wa('Hello PeptidesPrescripts, I would like a catalog overview.');
       trackEvent('page_view', { entityType: 'route', entityId: 'home', label: 'Home' });
     }
     resetRouteScroll();
@@ -2111,7 +2111,7 @@
       +   '<div class="hero-shell wrap">'
       +   '<div class="hero-grid">'
       +     '<div class="hero-title-block">'
-      +       '<div class="hero-kicker fade-in"><button class="hero-kicker-link" data-house-open>PeptiCore</button> · Research-use peptide catalog</div>'
+      +       '<div class="hero-kicker fade-in"><button class="hero-kicker-link" data-house-open>PeptidesPrescripts</button> · Research-use peptide catalog</div>'
       +       '<h1 class="hero-title fade-in fade-in-d1">Research-use peptides.<br/><em>Clear specs.</em></h1>'
       +     '</div>'
       +     '<div class="hero-body-block">'
@@ -2168,12 +2168,12 @@
       + '<section class="standard"><div class="wrap standard-inner">'
       +   '<div class="standard-kicker reveal">Catalog standard</div>'
       +   '<h2 class="standard-quote reveal">'
-      +     'PeptiCore keeps every product entry focused on <em>clear specifications</em>: '
+      +     'PeptidesPrescripts keeps every product entry focused on <em>clear specifications</em>: '
       +     'exact SKU references, listed vial formats, visible starting prices, available COA access, and a structured inquiry path.'
       +   '</h2>'
       +   '<div class="standard-signature reveal">'
       +     '<div class="standard-sig-name">AOSAI Biotechnology · Guangzhou</div>'
-      +     '<a class="standard-sig-link" href="/about">About PeptiCore and AOSAI <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>'
+      +     '<a class="standard-sig-link" href="/about">About PeptidesPrescripts and AOSAI <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></a>'
       +   '</div>'
       + '</div></section>'
 
@@ -2186,7 +2186,7 @@
       +   '<div class="home-seo-grid">'
       +     '<article class="home-seo-card reveal"><h3>Research-use peptide catalog</h3><p>Browse ' + totalSeries + ' research-use peptide series with SKU-level specifications, visible starting prices, and category browsing.</p><a href="/catalog">Open catalog overview</a></article>'
       +     '<article class="home-seo-card reveal"><h3>COA and quality access</h3><p>Review available COA previews and analytical documentation context before submitting an inquiry.</p><a href="/quality">Review COA access</a></article>'
-      +     '<article class="home-seo-card reveal"><h3>Order list workflow</h3><p>Build an order list, review estimated pricing, and send your inquiry through WhatsApp. Final quote is confirmed by PeptiCore sales.</p><a href="/order-process">See order process</a></article>'
+      +     '<article class="home-seo-card reveal"><h3>Order list workflow</h3><p>Build an order list, review estimated pricing, and send your inquiry through WhatsApp. Final quote is confirmed by PeptidesPrescripts sales.</p><a href="/order-process">See order process</a></article>'
       +     '<article class="home-seo-card reveal"><h3>Research-use ordering FAQ</h3><p>Read answers about specifications, COA requests, listed prices, member points, fixed shipping, and SKU search.</p><a href="/faq">Read FAQ</a></article>'
       +     '<article class="home-seo-card reveal"><h3>Documentation guides</h3><p>Understand COA fields, HPLC purity context, mass-spectrum records, SKU formats, and research catalog navigation.</p><a href="/guides">Browse guides</a></article>'
       +   '</div>'
@@ -2244,7 +2244,7 @@
       + '<div class="wrap">'
       +   '<div class="page-head">'
       +     '<div class="fade-in">'
-      +       '<div class="page-crumb"><a href="#/">PeptiCore</a>'
+      +       '<div class="page-crumb"><a href="#/">PeptidesPrescripts</a>'
       +         '<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M3 2l4 3-4 3" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>'
       +         '<span>' + esc(c.label) + '</span>'
       +       '</div>'
@@ -2419,11 +2419,11 @@
     var priceHigh = Math.max.apply(null, s.skus.map(function (k) { return k.price; }));
     var firstSku = s.skus[0];
     var firstSkuMsg = firstSku
-      ? 'Hello PeptiCore, I would like to order SKU ' + firstSku.sku + ' (' + s.name + ', ' + firstSku.spec + ', $' + firstSku.price + ').'
-      : 'Hello PeptiCore, I would like to order ' + s.name + '.';
+      ? 'Hello PeptidesPrescripts, I would like to order SKU ' + firstSku.sku + ' (' + s.name + ', ' + firstSku.spec + ', $' + firstSku.price + ').'
+      : 'Hello PeptidesPrescripts, I would like to order ' + s.name + '.';
 
     var skuRows = s.skus.map(function (sk, i) {
-      var msg = 'Hello PeptiCore, I would like to order SKU ' + sk.sku + ' (' + s.name + ', ' + sk.spec + ', $' + sk.price + ').';
+      var msg = 'Hello PeptidesPrescripts, I would like to order SKU ' + sk.sku + ' (' + s.name + ', ' + sk.spec + ', $' + sk.price + ').';
       return ''
         + '<div class="sku-row">'
         +   '<div class="sku-code">' + esc(sk.sku) + '</div>'

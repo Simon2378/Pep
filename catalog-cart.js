@@ -42,7 +42,7 @@
     var lines = items.map(function (item, i) {
       return (i + 1) + '. ' + item.seriesName + ' — ' + item.sku + ' — ' + item.spec + ' — $' + item.price;
     });
-    return 'Hello PeptiCore, I would like to order these products:\n\n' + lines.join('\n');
+    return 'Hello PeptidesPrescripts, I would like to order these products:\n\n' + lines.join('\n');
   }
 
   function pickWaHref() {
